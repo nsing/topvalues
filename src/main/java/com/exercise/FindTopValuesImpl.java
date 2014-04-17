@@ -7,7 +7,7 @@ public class FindTopValuesImpl implements FindTopValues {
 
 	/**
 	 * Returns the single highest integer
-	 * 
+	 *
 	 * @param input array
 	 * @return max value
 	 */
@@ -16,18 +16,18 @@ public class FindTopValuesImpl implements FindTopValues {
 	}
 
 	/**
-	 * Returns an array of the highest ’n’ values in the source array, ordered
+	 * Returns an array of the highest 'n' values in the source array, ordered
 	 * naturally, with the highest value at the start of the array
 	 * <p>
-	 * This uses partial sorting algorithm based on Quicksort. Expected 
+	 * This uses partial sorting algorithm based on Quicksort. Expected
 	 * time is O(s + n log n) where s is the size of array and n is the no.
 	 * of top elements.
-	 * 
+	 *
 	 * @param input array
 	 * @param no. of highest values
 	 * @return array of top values
 	 */
- 
+
 	public int[] findTopNValues(int[] anyOldOrderValues, int n) {
 		int[] topValues = new int[n];
 		quickfindFirstK(anyOldOrderValues, 0, anyOldOrderValues.length-1, n);
@@ -38,7 +38,7 @@ public class FindTopValuesImpl implements FindTopValues {
 	}
 
 	/**
-	 * This works in such a way that if the pivot falls in position n or later 
+	 * This works in such a way that if the pivot falls in position n or later
 	 * recurse only on the left partition otherwise recurse on both partitions
 	 *
 	 * @param array
@@ -93,9 +93,9 @@ public class FindTopValuesImpl implements FindTopValues {
 	 * @param index 2
 	 */
 	private void swap(int[] array, int i1, int i2) {
-		array[i1] = array[i1] + array[i2];
-		array[i2] = array[i1] - array[i2]
-		array[i1] = array[i1] - array[i2];
+        int tmp = array[i1];
+        array[i1] = array[i2];
+        array[i2] = tmp;
 	}
 
 	/**
