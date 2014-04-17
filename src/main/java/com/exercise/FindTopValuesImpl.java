@@ -6,7 +6,7 @@ package test;
 public class FindTopValuesImpl implements FindTopValues {
 
 	/**
-	 * Returns the single highest integer in the array.
+	 * Returns the single highest integer
 	 * 
 	 * @param input array
 	 * @return max value
@@ -16,14 +16,15 @@ public class FindTopValuesImpl implements FindTopValues {
 	}
 
 	/**
-	 * Returns an array of the highest n values in the source array,
-	 * ordered naturally, with the highest value at the start of the array.
+	 * Returns an array of the highest ’n’ values in the source array, ordered
+	 * naturally, with the highest value at the start of the array
+	 * <p>
 	 * This uses partial sorting algorithm based on Quicksort. Expected 
 	 * time is O(s + n log n) where s is the size of array and n is the no.
 	 * of top elements.
 	 * 
 	 * @param input array
-	 * @param no. of top values
+	 * @param no. of highest values
 	 * @return array of top values
 	 */
  
@@ -37,20 +38,23 @@ public class FindTopValuesImpl implements FindTopValues {
 	}
 
 	/**
-	 * If the pivot falls in position n or later, recurse only on the left
-	 * partition
+	 * This works in such a way that if the pivot falls in position n or later 
+	 * recurse only on the left partition otherwise recurse on both partitions
 	 *
 	 * @param array
 	 * @param left
 	 * @param right
-	 * @param no. of top values
+	 * @param no. of highest values
 	 */
 	private void quickfindFirstK(int[] array, int left, int right, int n) {
 		if (right > left) {
 			int pivotIndex = left + (right-left)/2;
 			int pivotNewIndex = partition(array, left, right, pivotIndex);
+			//Recurse on left partition
 			quickfindFirstK(array, left, pivotNewIndex-1, n);
 			if (pivotNewIndex < (left + n)) {
+				/*Pivot doesn't fall in position n or later so recurse
+				on right partition too*/
 				quickfindFirstK(array, pivotNewIndex+1, right, n);
 			}
 		}
@@ -116,7 +120,7 @@ public class FindTopValuesImpl implements FindTopValues {
 			System.out.print(topValues[i]+" ");
 		}
 
-		System.out.println("\nTop values is: ");
+		System.out.println("\nTop value is: ");
 		System.out.println(findTopValues.findMaxValue(arr));
 	}
 
