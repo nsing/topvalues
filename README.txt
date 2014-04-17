@@ -1,14 +1,15 @@
-Solution is based on partial Quicksort algorithm.
-Code is supplied with comments.
+Code is based on partial Quicksort algorithm. Code is supplied with comments.
+
+Junit test case contains 2 test functions to test top value and top values.
 
 Project root folder: topvalues
 
 Source code:
- main\java\com\exercise\FindTopValues
- main\java\com\exercise\FindTopValuesImpl
+ main\java\test\FindTopValues
+ main\java\test\FindTopValuesImpl
 
 Junit test cases:
- test\java\com\exercise\FindTopValuesTest
+ test\java\test\FindTopValuesTest
 
 API usage:
  Assign instance of FindTopValuesImpl to a variable of type FindTopValues. From the variable following functions can be called::
@@ -28,4 +29,3 @@ Stand alone execution:
 Execution through Eclipse IDE:
  1. Create a new java project and use TopValues folder as the project source folder
  2. Run FindTopValuesImpl class
-   
