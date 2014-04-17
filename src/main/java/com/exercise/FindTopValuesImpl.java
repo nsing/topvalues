@@ -1,4 +1,4 @@
-package test;
+package com.exercise;
 
 /**
  * Implements interface {@link FindTopValues}
